@@ -10,15 +10,15 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set font according to system
 if has("mac") || has("macunix")
-    set gfn=IBM\ Plex\ Mono:h14,Hack:h14,Source\ Code\ Pro:h15,Menlo:h15
+    set gfn=Hack:h16,Source\ Code\ Pro:h15,Menlo:h15
 elseif has("win16") || has("win32")
-    set gfn=IBM\ Plex\ Mono:h14,Source\ Code\ Pro:h12,Bitstream\ Vera\ Sans\ Mono:h11
+    set gfn=Hack:h16,Source\ Code\ Pro:h14,Bitstream\ Vera\ Sans\ Mono:h16
 elseif has("gui_gtk2")
-    set gfn=IBM\ Plex\ Mono:h14,:Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
+    set gfn=Hack\ 16,Source\ Code\ Pro\ 14,Bitstream\ Vera\ Sans\ Mono\ 16
 elseif has("linux")
-    set gfn=IBM\ Plex\ Mono:h14,:Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
+    set gfn=Hack\ 16,Source\ Code\ Pro\ 14,Bitstream\ Vera\ Sans\ Mono\ 16
 elseif has("unix")
-    set gfn=Monospace\ 11
+    set gfn=Monospace\ 16
 endif
 
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
@@ -43,11 +43,17 @@ autocmd! bufwritepost ~/.vim_runtime/my_configs.vim source ~/.vim_runtime/my_con
 " => Turn persistent undo on 
 "    means that you can undo even when you close a buffer/VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-try
-    set undodir=~/.vim_runtime/temp_dirs/undodir
-    set undofile
-catch
-endtry
+" wming change I dont need this, I found that sometime, after doing
+" some code modification, I want to go back to the state that i
+" just open that file. But if have such persistence undo option,
+" when i pressing u , it will undo more than i want.
+"
+" Removing set undofile and manually deleting the undo files should be enough.
+"try
+"    set undodir=~/.vim_runtime/temp_dirs/undodir
+"    set undofile
+"catch
+"endtry
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
