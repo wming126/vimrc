@@ -53,6 +53,7 @@ vim-pug https://github.com/digitaltoad/vim-pug
 lightline.vim https://github.com/itchyny/lightline.vim
 vim-abolish https://github.com/tpope/tpope-vim-abolish
 mru.vim https://github.com/vim-scripts/mru.vim
+vim-markdown https://github.com/plasticboy/vim-markdown
 """.strip()
 
 GITHUB_ZIP = '%s/archive/master.zip'
@@ -82,7 +83,7 @@ def download_extract_replace(plugin_name, zip_path, temp_dir, source_dir):
         pass
 
     shutil.move(plugin_temp_path, plugin_dest_path)
-
+    print(zip_path)
     print('Updated {0}'.format(plugin_name))
 
 
